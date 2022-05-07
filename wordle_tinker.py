@@ -4,7 +4,7 @@ from Wordle_data import main
                          
 def onKeyPress(event):
     num_chars = sum([char.isalpha() for char in game.gameboard])
-    print(event)
+    #print(event)
     # set the pressed key to the gameboard
     if(event.char.isalpha() and game.key_index<len(game.gameboard_finished)):
         game.gameboard[game.key_index] = event.char

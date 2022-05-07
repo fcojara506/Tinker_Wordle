@@ -9,6 +9,6 @@ Example of game in action:
 
 <img src="https://github.com/fcojara506/Tinker_Wordle/blob/main/window_1st_attempt.png" width="300">
 
-After first attempt, keys and letter get 3 different colours.
+After first attempt, keys and letters get 3 distinctive colours.
 
 <img src="https://github.com/fcojara506/Tinker_Wordle/blob/main/window_2nd_attempt.png" width="300">

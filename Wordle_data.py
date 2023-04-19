@@ -1,6 +1,6 @@
 import pandas as pd
 
-#es = pd.read_csv('spanish_dictionary.csv',names = ['word'])
+
 # count the number of letter in each word
 def clean_data(df,min_len = 5):
     df.word = df.word.str.strip()
@@ -11,9 +11,9 @@ def clean_data(df,min_len = 5):
     df = df.reset_index(drop=True)
     return df
 
-def main():
+def read_data(csv_path = 'english_dictionary2.csv'):
     #read dictionary words
-    en_dict = pd.read_csv('english_dictionary2.csv',names = ['word','freq'], header = 0)
+    en_dict = pd.read_csv(csv_path,names = ['word','freq'], header = 0)
     # filter only word with more than 5 letters
     en_long = list(clean_data(en_dict)['word'])
     en      = list(clean_data(en_dict).head(1000)['word'])

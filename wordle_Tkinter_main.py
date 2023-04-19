@@ -1,6 +1,6 @@
 import tkinter as tk
 from Wordle_class import Wordle
-from Wordle_data import main
+from Wordle_data import read_data
                          
 def onKeyPress(event):
     num_chars = sum([char.isalpha() for char in game.gameboard])
@@ -67,24 +67,24 @@ def key_press():
     main_form.bind('<KeyPress>', onKeyPress)  
 
 def create_submit_button():
-    submit_but = tk.Button(main_form,text = 'submit',state = 'disable',bg = 'white', command = lambda: submit_click())
+    submit_but = tk.Button(main_form,text = 'submit',state = 'disable',bg = 'white',fg = 'black', command = lambda: submit_click())
     submit_but.grid(row=game.num_trials, column=7,padx=30, ipady=10)
     return submit_but
  
 def create_legend():
-    tk.Label(main_form, text="LEGEND",font = "mincho 15", bg = 'white').place(x=0,y=320)
-    tk.Label(main_form, text="Character in correct position",font = "mincho 10",bg='green').place(x=0,y=340)
-    tk.Label(main_form, text="Character in wrong position but in word",font = "mincho 10", bg='yellow').place(x=0,y=360)
-    tk.Label(main_form, text="Character not in word",font = "mincho 10", bg = 'gray').place(x=0,y=380)
+    tk.Label(main_form, text="LEGEND",font = "mincho 15", bg = 'white',fg = 'black').place(x=0,y=320)
+    tk.Label(main_form, text="Character in correct position",font = "mincho 10",bg='green',fg = 'black').place(x=0,y=340)
+    tk.Label(main_form, text="Character in wrong position but in word",font = "mincho 10", bg='yellow',fg = 'black').place(x=0,y=360)
+    tk.Label(main_form, text="Character not in word",font = "mincho 10", bg = 'gray',fg = 'black').place(x=0,y=380)
 
 
 
 ###########################
 # Window
-en,en_long = main()
+en,en_long = read_data()
 main_form = tk.Tk()                                                          
 main_form.title("Wordle")
-main_form.geometry("300x550")
+main_form.geometry("350x600")
 main_form.resizable(True, False)
 main_form.configure(background='white')
     

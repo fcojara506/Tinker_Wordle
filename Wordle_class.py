@@ -5,13 +5,13 @@ from tkinter import messagebox
 class Wordle:
     def __init__(self,word_list):
         self.word_list = word_list                                                      
-        self.num_lives = 5
+        self.num_lives = 2
         self.num_trials = 0
         self.key_index = 0
         self.is_dict = False
-        self.colors = list
+        
         self.keyboard_en = ['q','w','e','r','t','y','u','i','o','p','a','s','d','f','g','h','j','k','l','z','x','c','v','b','n','m']
-        self.colors_keyboard = ['white' for char in self.keyboard_en]
+        self.colors_keyboard = ['black' for char in self.keyboard_en]
         self.end_state = False
         self.played_word = random.choice(self.word_list)
         self.gameboard = ['_'] * len(self.played_word)
@@ -19,16 +19,16 @@ class Wordle:
     
     def restart_program(self):
         self.__init__(self.word_list)
-        self.set_Word()                                                        
-        self.create_board()                              
-        self.set_finished_board()
+        #self.set_Word()                                                        
+        #self.create_board()                              
+        #self.set_finished_board()
         self.set_matrix()
         
     def set_matrix(self,main_form):
         w = 0
         for i in range(self.num_lives):
             for j in range(len(self.played_word)):
-                gui_gameboard = tk.Label(main_form ,font = "mincho 40 bold", bg = 'white')
+                gui_gameboard = tk.Label(main_form ,font = "mincho 40 bold", bg = 'white',fg = 'black')
                 gui_gameboard.grid(row=i, column=j,padx=5)
                 if(w< len(self.played_word)*self.num_lives):
                     gui_gameboard['text'] = str(self.gameboard[j])
